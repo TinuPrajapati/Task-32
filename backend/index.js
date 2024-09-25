@@ -26,7 +26,11 @@ fs.readFile("./data.json", (err, data) => {
   }
 });
 
-app.use(cors());
+app.use(cors({
+  origin:process.env.frontend_url,
+  credentials: true,
+  methods:["GET","POST"]
+}));
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());

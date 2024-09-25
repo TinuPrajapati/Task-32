@@ -16,6 +16,8 @@ function Signup() {
         {
           username,
           password,
+        },{
+          withCredentials:true
         }
       );
       alert(response.data);
@@ -25,7 +27,7 @@ function Signup() {
         alert("User already exists");
         navigate("/login")
       }else{
-        alert(err.response.data)
+        console.log(err)
       }
     }
   };
